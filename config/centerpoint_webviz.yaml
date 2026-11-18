@@ -1,0 +1,21 @@
+# CenterPoint BEV 视频流 webviz 配置
+# 订阅 /image_jpeg (sensor_msgs/CompressedImage) 和 /detections (tb_det_msgs/TbPerceptionTargets)
+#
+# Browser: http://<board-ip>:8000/
+/**:
+  ros__parameters:
+    deployment: gateway
+    stamp_align: relaxed
+    ws_base_port: 8080
+    gateway_ws_port: 9090
+    queue_max: 50
+    max_channel_count: 1
+    channel_count: 1
+    channel_id: 0
+    channel_name: CenterPoint-BEV
+    jpeg_quality: 85
+    enable_tacv_jpeg: false
+    detection_topic: /detections
+    detection_enabled: false  # Disable overlay - image already rendered by ai_infer_node
+    input_msg: sensor_compressed
+    input_topic: /image_jpeg

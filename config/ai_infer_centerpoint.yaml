@@ -1,0 +1,21 @@
+/**:
+  ros__parameters:
+    input_msg: centerpoint_file
+    detections_topic: /detections
+    centerpoint.frame_id: centerpoint
+    centerpoint.image_topic: /image_jpeg
+
+    centerpoint.pfe_model: ~/topsbot/models/centerpoint_pfe_p5268_float16.nb
+    centerpoint.rpn_model: ~/topsbot/models/centerpoint_rpn_head_float16.nb
+    centerpoint.score_threshold: 0.2
+
+    centerpoint.sweeps_manifest: ""
+    centerpoint.frames_list: ""
+    centerpoint.single_frame_mode: false
+
+    centerpoint.device_ids: [0, 1]
+    centerpoint.load_balancer.strategy: least_loaded
+    centerpoint.load_balancer.queue_size: 20
+
+    centerpoint.run_interval_ms: 800
+    centerpoint.bev_size: 1024

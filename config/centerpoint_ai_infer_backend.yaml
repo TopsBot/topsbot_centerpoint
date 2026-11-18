@@ -1,0 +1,33 @@
+# CenterPoint ai_infer configuration example
+# Usage: ros2 launch topsbot_centerpoint centerpoint_ai_infer.launch.py
+
+/**:
+  ros__parameters:
+    # Backend configuration
+    backend: "centerpoint"
+    model_name: "centerpoint"
+
+    # Model paths (semicolon-separated). Multi-stage: "pfe;rpn".
+    # Single-graph: one merged NB "merged.nb" (PFE + ScatterND + RPN fused).
+    # Will be overridden by launch file after model resolution
+    model_path: "~/topsbot/models/centerpoint_pfe_p5268_float16.nb;~/topsbot/models/centerpoint_rpn_head_float16.nb"
+
+    # NPU device
+    device_id: 0
+
+    # Detection threshold
+    confidence_threshold: 0.2
+
+    # Input/Output topics
+    input_msg: "pointcloud"
+    input_topic: "/points"
+    image_topic: "/centerpoint/image"
+    detections_topic: "/detections"
+
+    # Rendering configuration
+    render:
+      enabled: true
+      size: 1024  # BEV image size in pixels
+
+    # Frame metadata
+    frame_id: "centerpoint"

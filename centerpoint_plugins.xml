@@ -1,0 +1,8 @@
+<library path="topsbot_centerpoint_backend">
+  <class name="centerpoint" type="topsbot_centerpoint::CenterPointBackend" base_class_type="topsbot_ai_infer::IInferenceBackend">
+    <description>
+      CenterPoint 3D object detection backend for point cloud inference.
+      Supports multi-core execution through ai_infer_node worker framework.
+    </description>
+  </class>
+</library>

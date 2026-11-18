@@ -1,0 +1,27 @@
+/**:
+  ros__parameters:
+    # Model path (single-graph NB: PFE + ScatterND + RPN fused).
+    merged_model: "~/topsbot/models/centerpoint_p5268_float16.nb"
+
+    # NPU cores configuration
+    device_ids: [0, 1]
+    max_queue_size: 20
+
+    # Input data source (specify one)
+    bin_files_dir: ""
+    bin_list_file: "/root/topsbot/data/bins.txt"
+
+    # Playback settings
+    frame_interval_ms: 100
+    loop: true
+
+    # Detection parameters
+    score_threshold: 0.2
+
+    # Visualization
+    bev_size: 1024
+
+    # ROS2 topics
+    frame_id: "lidar"
+    detections_topic: "/detections"
+    image_topic: "/image_jpeg"

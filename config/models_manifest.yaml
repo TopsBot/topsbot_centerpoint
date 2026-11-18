@@ -1,0 +1,15 @@
+install_dir: "~/topsbot/models"
+
+
+models_zip_url: "https://bj25486.apps.aliyunfile.com/disk/s/y65UJ35TK69?domainId=bj25486"
+
+required_models:
+  - centerpoint_pfe_p5268_float16.nb
+  - centerpoint_rpn_head_float16.nb
+  - centerpoint_p5268_float16.nb
+
+
+optional_models:
+  - centerpoint_pfe_p5268_int8.nb
+  - centerpoint_rpn_head_int8.nb
+  - centerpoint_p5268_int8.nb

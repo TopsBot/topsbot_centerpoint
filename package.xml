@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>topsbot_centerpoint</name>
+  <version>0.6.0</version>
+  <description>CenterPoint-PointPillars (nuScenes, 10-sweep) core inference library for TOPSBOT.</description>
+
+  <maintainer email="developer@topfuture.com">TOPSBOT</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>pluginlib</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tb_det_msgs</depend>
+  <depend>libopencv-dev</depend>
+  <depend>libtaruntime</depend>
+  <build_depend>topsbot_ai_infer</build_depend>
+  <exec_depend>topsbot_ai_infer</exec_depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <topsbot_ai_infer plugin="${prefix}/centerpoint_plugins.xml"/>
+  </export>
+</package>

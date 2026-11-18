@@ -1,0 +1,19 @@
+# CenterPoint 测试数据集清单：安装目录 + 阿里云盘分享链接
+# 与模型清单同一套机制；launch 未显式指定数据路径时自动 ensure/下载。
+#   自动:  ros2 launch topsbot_centerpoint centerpoint.launch.py
+#   手动:  bash .../scripts/download_dataset.sh            # 走分享链接
+#   离线:  bash .../scripts/download_dataset.sh --archive /path/data.zip
+
+install_dir: "~/topsbot/data"
+
+# 阿里云盘分享链接（指向 data.zip；链接失效时替换）
+models_zip_url: "https://bj25486.apps.aliyunfile.com/disk/s/5TPy16kFARE?domainId=bj25486"
+
+# 判定"数据集已就绪"的路径（相对 install_dir）：任一缺失即触发下载
+required_paths:
+  - bins.txt
+  - seq_test/board_manifest.txt
+  - seq_test/frame_0000/sweeps.txt
+
+# launch 缺省使用的入口（相对 install_dir，必须出现在 required_paths 语义内）
+default_frames_list: seq_test/board_manifest.txt
